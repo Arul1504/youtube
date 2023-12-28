@@ -322,7 +322,7 @@
         const encodedSearchInput = encodeURIComponent(searchInput.value);
 
         // Buat URL untuk permintaan pencarian
-        const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${encodedSearchInput}&key=${apiKey}`;
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${encodedSearchInput}&key=${apiKey}`;
 
         // Lakukan permintaan HTTP dengan Fetch API
         fetch(apiUrl)
