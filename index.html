@@ -11,7 +11,7 @@
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
+        background-color: #ffffff;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -19,8 +19,6 @@
 
     #container {
         width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
 
@@ -136,16 +134,19 @@
 
 
     #fullscreen-btn {
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        text-align: center;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 4px;
-    }
+    position: fixed;
+    top: 20px; /* Atur jarak dari bagian atas */
+    right: 20px; /* Atur jarak dari bagian kanan */
+    background-color: #fcfdfc;
+    color: #4caf50;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
 </style>
 
 
@@ -190,77 +191,6 @@
         } else {
             cancelFullScreen.call(doc);
         }
-    }
-    var videoPlayer = document.getElementById('mainVideo');
-    var currentVideoIndex = 0;
-    var videoUrls = [];
-
-    function playPreviousVideo() {
-        if (!searchPerformed) {
-            alert("Silahkan cari lagu terlebih dahulu.");
-            return;
-        }
-
-        currentVideoIndex = (currentVideoIndex - 1 + videoUrls.length) % videoUrls.length;
-        playVideoAtIndex(currentVideoIndex);
-    }
-
-    function playNextVideo() {
-        if (!searchPerformed) {
-            alert("Silahkan cari lagu terlebih dahulu.");
-            return;
-        }
-
-        currentVideoIndex = (currentVideoIndex + 1) % videoUrls.length;
-        playVideoAtIndex(currentVideoIndex);
-    }
-
-
-    function playVideoAtIndex(index) {
-    // Hentikan pemutaran video saat ini jika ada
-    if (videoPlayer && !videoPlayer.paused) {
-        videoPlayer.pause();
-    }
-
-    // Mulai memutar video baru
-    var nextVideoUrl = videoUrls[index];
-    videoPlayer.src = nextVideoUrl;
-    videoPlayer.play();
-}
-
-    function confirmLogout() {
-        var confirmation = confirm("Anda yakin ingin logout?");
-        if (!confirmation) {
-            event.preventDefault(); // Mencegah formulir di-submit jika pembatalan dilakukan
-        }
-    }
-
-    function showRecommendations() {
-        // Daftar rekomendasi video (ganti sesuai kebutuhan)
-        var recommendations = [
-            { title: 'Recommended Video 1', url: 'https://www.youtube.com/embed/example_video_url_1' },
-            { title: 'Recommended Video 2', url: 'https://www.youtube.com/embed/example_video_url_2' },
-            { title: 'Recommended Video 3', url: 'https://www.youtube.com/embed/example_video_url_3' },
-        ];
-
-        // Tampilkan rekomendasi video
-        var recommendationsContainer = document.getElementById('recommendations');
-        recommendationsContainer.innerHTML = '';
-
-        recommendations.forEach(function (recommendation) {
-            var iframe = document.createElement('iframe');
-            iframe.width = '280';
-            iframe.height = '160';
-            iframe.src = recommendation.url;
-            iframe.title = recommendation.title;
-            iframe.classList.add('recommendation');
-            iframe.onclick = function () {
-                videoPlayer.src = recommendation.url;
-                videoPlayer.play();
-            };
-
-            recommendationsContainer.appendChild(iframe);
-        });
     }
     function displayResults(results) {
     const resultsContainer = document.getElementById('results');
