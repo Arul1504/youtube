@@ -3,13 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
     <title>Content</title>
     <style>
       body {
         background: url("background-21.jpg") no-repeat center center fixed;
-        /* Menyesuaikan background size agar menutupi seluruh halaman */
         background-size: cover;
         margin: 0;
         padding: 0;
@@ -95,78 +97,118 @@
         object-fit: cover;
       }
       .jam-digital-malasngoding {
-		overflow: hidden;
-		width: 330px;
-		margin: 20px auto;
-		border: 5px solid #efefef;
-	}
-	.kotak{
-		float: left;
-		width: 110px;
-		height: 100px;
-		background-color: #189fff;
-	}
-	.jam-digital-malasngoding p {
-		color: #fff;
-		font-size: 36px;
-		text-align: center;
-		margin-top: 30px;
-	}
-  .video-results {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
+        overflow: hidden;
+        width: 330px;
+        margin: 20px auto;
+        border: 5px solid #efefef;
+      }
+      .kotak {
+        float: left;
+        width: 110px;
+        height: 100px;
+        background-color: #189fff;
+      }
+      .jam-digital-malasngoding p {
+        color: #fff;
+        font-size: 36px;
+        text-align: center;
+        margin-top: 30px;
+      }
+      .video-results {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
 
-  .video-results li {
-    background-color: #189fff;
-    flex: 1 0 45%; /* Gunakan flex untuk mengatur lebar item dan margin */
-    margin: 0 5px 20px; /* Sesuaikan margin dengan preferensi Anda */
-    text-align: center;
-    border: 5px solid #000; /* Tambahkan efek border */
-    padding: 10px; /* Sesuaikan padding dengan preferensi Anda */
-    box-sizing: border-box; /* Sesuaikan box-sizing untuk menghindari perbedaan lebar total */
-  }
+      .video-results li {
+        background-color: #189fff;
+        flex: 1 0 45%;
+        margin: 0 5px 20px;
+        text-align: center;
+        border: 5px solid #000;
+        padding: 10px;
+        box-sizing: border-box;
+      }
 
-  .video-results h3 {
-    margin-bottom: 10px;
-  }
+      .video-results h3 {
+        margin-bottom: 10px;
+      }
 
-  .video-results iframe {
-    width: 100%;
-    height: 180px;
-    border: none;
-    cursor: pointer;
-    object-fit: cover;
-  }
+      .video-results iframe {
+        width: 100%;
+        height: 180px;
+        border: none;
+        cursor: pointer;
+        object-fit: cover;
+      }
 
-  .video-results p {
-    margin-top: 10px;
-  }
+      .video-results p {
+        margin-top: 10px;
+      }
 
-  @media screen and (max-width: 768px) {
-    .video-results li {
-      flex: 1 0 100%; /* Pada layar kecil, item harus mengambil seluruh lebar */
-    }
-  }
-  #results li p a {
-  display: inline-block;
-  padding: 8px 12px;
-  background-color: #4b3efe; /* Warna latar belakang hijau */
-  color: #fff; /* Warna teks putih */
-  text-decoration: none;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Efek transisi pada perubahan warna latar belakang */
-}
+      @media screen and (max-width: 768px) {
+        .video-results li {
+          flex: 1 0 100%;
+        }
+      }
+      #results li p a {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #4b3efe;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-#results li p a:hover {
-  background-color: #4759fc; /* Warna latar belakang hijau yang berbeda pada hover */
-}
+      #results li p a:hover {
+        background-color: #4759fc;
+      }
+      #newsSlot {
+        margin-top: 30px;
+      }
 
+      .newsBox {
+        background-color: #05dcf4;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .newsBox h3 {
+        color: #ff0000;
+        margin-bottom: 10px;
+      }
+
+      .newsBox ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .newsBox li {
+        border-bottom: 1px solid #35ecf9;
+        padding: 10px 0;
+      }
+
+      .newsBox li:last-child {
+        border-bottom: none;
+      }
+
+      .newsBox a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .newsBox a:hover {
+        color: #ff0000;
+      }
     </style>
   </head>
   <body>
@@ -178,116 +220,150 @@
           id="searchInput"
           placeholder="Enter search keywords"
         />
-        <!-- Panggil searchYouTube dari modul script.js -->
         <button id="searchButton" onclick="searchYouTube()">Search</button>
       </div>
     </div>
 
     <div class="jam-digital-malasngoding">
-        <div class="kotak">
-            <p id="jam"></p>
-        </div>
-        <div class="kotak">
-            <p id="menit"></p>
-        </div>
-        <div class="kotak">
-            <p id="detik"></p>
-        </div>
+      <div class="kotak">
+        <p id="jam"></p>
+      </div>
+      <div class="kotak">
+        <p id="menit"></p>
+      </div>
+      <div class="kotak">
+        <p id="detik"></p>
+      </div>
     </div>
 
     <div id="container">
       <div id="content">
         <h2>Home</h2>
         <p>Selamat Datang!</p>
-          <div id="results" class="video-results"></div>
+        <div id="results" class="video-results"></div>
+        <div id="newsSlot">
+          <div class="newsBox">
+            <h3>Berita Terkini dari News API</h3>
+            <ul id="newsList"></ul>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
-  <script>
-    function displayResults(results) {
-      const resultsContainer = document.getElementById("results");
-      resultsContainer.innerHTML = "";
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        getNewsFromAPI();
+      });
 
-      if (results && results.length > 0) {
-        results.reverse();
+      async function getNewsFromAPI() {
+        const apiKey = "f8f1eea37fd942d58c488676b84ea7b1";
+        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 
-        results.forEach((result) => {
-          const videoId = result.id.videoId;
-          const playlistId = result.id.playlistId;
-          const title = result.snippet.title;
-          const isPlaylist = result.id.kind === "youtube#playlist";
+        try {
+          const response = await fetch(apiUrl);
+          const data = await response.json();
 
-          const iframe = document.createElement("iframe");
-          iframe.width = "100%";
-          iframe.height = "180";
-          iframe.allowFullscreen = true;
+          const newsList = document.getElementById("newsList");
 
-          if (isPlaylist) {
-            iframe.src = `https://www.youtube.com/embed/videoseries?list=${playlistId}`;
+          if (data.articles && data.articles.length > 0) {
+            data.articles.forEach((article) => {
+              const listItem = document.createElement("li");
+              listItem.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>`;
+              newsList.appendChild(listItem);
+            });
           } else {
-            iframe.src = `https://www.youtube.com/embed/${videoId}?si=${videoId}`;
-            iframe.onclick = function () {
-              videoPlayer.src = `https://www.youtube.com/embed/${videoId}?si=${videoId}`;
-              videoPlayer.play();
-            };
+            const listItem = document.createElement("li");
+            listItem.textContent = "Tidak ada berita terkini.";
+            newsList.appendChild(listItem);
           }
+        } catch (error) {
+          console.error("Error fetching news from News API:", error);
+        }
+      }
 
-          iframe.title = title;
-          iframe.classList.add("thumbnail-iframe");
+      function displayResults(results) {
+        const resultsContainer = document.getElementById("results");
+        resultsContainer.innerHTML = "";
 
-          const downloadButton = document.createElement("a");
-          downloadButton.href = `https://www.ssyoutube.com/watch?v=${videoId}`; // Contoh tautan menggunakan layanan ssyoutube.com
-          downloadButton.target = "_blank";
-          downloadButton.innerText = "Download";
+        if (results && results.length > 0) {
+          results.reverse();
 
-          const listItem = document.createElement("li");
-          listItem.innerHTML = `
+          results.forEach((result) => {
+            const videoId = result.id.videoId;
+            const playlistId = result.id.playlistId;
+            const title = result.snippet.title;
+            const isPlaylist = result.id.kind === "youtube#playlist";
+
+            const iframe = document.createElement("iframe");
+            iframe.width = "100%";
+            iframe.height = "180";
+            iframe.allowFullscreen = true;
+
+            if (isPlaylist) {
+              iframe.src = `https://www.youtube.com/embed/videoseries?list=${playlistId}`;
+            } else {
+              iframe.src = `https://www.youtube.com/embed/${videoId}?si=${videoId}`;
+              iframe.onclick = function () {
+                videoPlayer.src = `https://www.youtube.com/embed/${videoId}?si=${videoId}`;
+                videoPlayer.play();
+              };
+            }
+
+            iframe.title = title;
+            iframe.classList.add("thumbnail-iframe");
+
+            const downloadButton = document.createElement("a");
+            downloadButton.href = `https://www.ssyoutube.com/watch?v=${videoId}`;
+            downloadButton.target = "_blank";
+            downloadButton.innerText = "Download";
+
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
                 <h3>${title}</h3>
                 ${iframe.outerHTML}
                 <p>${downloadButton.outerHTML}</p>
             `;
 
-          resultsContainer.appendChild(listItem);
-        });
-      } else {
-        console.error("Results are undefined or empty:", results);
+            resultsContainer.appendChild(listItem);
+          });
+        } else {
+          console.error("Results are undefined or empty:", results);
+        }
       }
-    }
-    function searchYouTube() {
-      const apiKey = "AIzaSyDX0aOP6Fs4LRj2dpZ6WKns4XZlKuvlGJ8"; // Ganti dengan kunci API Anda
-      const searchInput = document.getElementById("searchInput");
-      const encodedSearchInput = encodeURIComponent(searchInput.value);
-      // Buat URL untuk permintaan pencarian
-      const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${encodedSearchInput}&key=${apiKey}`;
 
-      // Lakukan permintaan HTTP dengan Fetch API
-      fetch(apiUrl)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then((data) => {
-          searchPerformed = true; // Setelah pencarian berhasil, tandai bahwa pencarian telah dilakukan
-          displayResults(data.items);
-          searchInput.value = ""; // Reset the search input value
-        })
-        .catch((error) => console.error("Error:", error));
-    }
-    var videoUrls = []; // Kosongkan array videoUrls
+      function searchYouTube() {
+        const apiKey = "AIzaSyDX0aOP6Fs4LRj2dpZ6WKns4XZlKuvlGJ8";
+        const searchInput = document.getElementById("searchInput");
+        const encodedSearchInput = encodeURIComponent(searchInput.value);
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${encodedSearchInput}&key=${apiKey}`;
 
-    var searchPerformed = false;
-    //date
-    // Fungsi untuk menambahkan nol di depan angka jika kurang dari 10
-    window.setTimeout("waktu()", 1000);
- 
- function waktu() {
-     var waktu = new Date();
-     setTimeout("waktu()", 1000);
-     document.getElementById("jam").innerHTML = waktu.getHours();
-     document.getElementById("menit").innerHTML = waktu.getMinutes();
-     document.getElementById("detik").innerHTML = waktu.getSeconds();
- }
-  </script>
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            searchPerformed = true;
+            displayResults(data.items);
+            searchInput.value = "";
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+
+      var videoUrls = [];
+
+      var searchPerformed = false;
+
+      window.setTimeout("waktu()", 1000);
+
+      function waktu() {
+        var waktu = new Date();
+        setTimeout("waktu()", 1000);
+        document.getElementById("jam").innerHTML = waktu.getHours();
+        document.getElementById("menit").innerHTML = waktu.getMinutes();
+        document.getElementById("detik").innerHTML = waktu.getSeconds();
+      }
+    </script>
+  </body>
 </html>
