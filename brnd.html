@@ -6,22 +6,28 @@
     <title>Me Tube No Iklan</title>
 </head>
 <style>
-   body {
-            margin: 0;
-            overflow: hidden;
-            background-color: #0b5005;
-        }
+    body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #0b5005;
+    }
 
-        #background-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-        }
+    #background-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100vh; /* Set the height to 100% of the viewport height */
+        border: none; /* Remove the border if needed */
+    }
 </style>
 <body>
     <video id="background-video" autoplay muted loop>
@@ -29,7 +35,6 @@
         Your browser does not support the video tag.
     </video>
     <!-- Include the content using an iframe -->
-    <iframe src="content.html" width="100%" height="690px" frameborder="0"></iframe>
-
+    <iframe src="content.html" frameborder="0"></iframe>
 </body>
 </html>
