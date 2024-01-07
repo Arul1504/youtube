@@ -1,5 +1,3 @@
-<!-- content.html -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,32 +12,8 @@
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-      }
-      #content {
-        overflow: auto;
-      }
-
-      h2 {
+        background-color: #1c1c1c;
         color: #fafcfa;
-      }
-
-      p {
-        font-size: 18px;
-        color: #fafcfa;
-        line-height: 1.6;
-        opacity: 0; /* Initial opacity set to 0 for the animation */
-        animation: fadeIn 1.5s ease-out forwards; /* Animation definition */
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-20px); /* Optional: slide up while fading in */
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
 
       #header {
@@ -48,6 +22,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
+        background-color: #333;
       }
 
       .logo {
@@ -59,16 +34,20 @@
       #search {
         display: flex;
         align-items: center;
+        flex-grow: 1;
       }
 
-      #search input {
+      #searchInput {
+        flex-grow: 1;
         padding: 8px;
         margin-right: 8px;
         border: 1px solid #ccc;
         border-radius: 4px;
+        background-color: #444;
+        color: #fafcfa;
       }
 
-      #search button {
+      #searchButton {
         padding: 8px 12px;
         background-color: #ff0000;
         color: #fff;
@@ -77,26 +56,91 @@
         cursor: pointer;
       }
 
-      #searchResults {
-        margin-top: 20px;
-      }
+      .jam-digital-malasngoding {
+            overflow: hidden;
+            width: 330px;
+            margin: 20px auto;
+            border: 5px solid #efefef;
+            display: flex;
+            justify-content: center; /* Mengubah properti ini */
+            align-items: center;
+            padding: 5px;
+            background-color: #333;
+        }
+
+        .kotak {
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center; /* Menyertakan properti ini */
+            margin: 0 10px;
+            background-color: #1c1c1c;
+            border-radius: 50%;
+            font-size: 24px;
+            color: #fafcfa;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .jam-digital-malasngoding .kotak p {
+            font-size: 24px;
+        }
 
       #container {
         width: 100%;
         text-align: center;
+        padding: 20px;
       }
+
+      #content {
+        overflow: auto;
+        background-color: #333;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      h2 {
+        color: #fafcfa;
+      }
+
+      p {
+        font-size: 18px;
+        color: #fafcfa;
+        line-height: 1.6;
+        opacity: 0;
+        animation: fadeIn 1.5s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       #results {
         list-style: none;
         padding: 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        margin-top: 20px;
       }
 
       #results li {
         width: 45%;
         margin-bottom: 20px;
         text-align: center;
+        background-color: #444;
+        padding: 15px;
+        border-radius: 10px;
       }
 
       @media screen and (max-width: 768px) {
@@ -120,46 +164,22 @@
         cursor: pointer;
         object-fit: cover;
       }
-      .jam-digital-malasngoding {
-        overflow: hidden;
-        width: 330px;
-        margin: 20px auto;
-        border: 5px solid #efefef;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .kotak {
-        width: 30px;
-        height: 30px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .jam-digital-malasngoding p {
-        color: #fff;
-        font-size: 16px;
-        text-align: center;
-        margin-top: 10px;
-      }
 
       .video-results li {
-        background-color: rgba(244, 244, 244, 0.5); /* Gunakan rgba untuk menentukan warna dengan tingkat transparansi */
-        color: #fffdfd;
         flex: 1 0 45%;
         margin: 0 5px 20px;
         text-align: center;
         border: 5px solid #fffdfd;
         padding: 10px;
         box-sizing: border-box;
-        overflow: hidden; /* Tambahkan overflow: hidden agar konten yang terlalu panjang dipotong */
+        overflow: hidden;
+        background-color: rgba(244, 244, 244, 0.5);
+        border-radius: 10px;
       }
 
       .video-results h3 {
         margin-bottom: 10px;
-        overflow: hidden; /* Tambahkan overflow: hidden agar judul yang terlalu panjang dipotong */
+        overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
       }
@@ -170,12 +190,12 @@
         border: none;
         cursor: pointer;
         object-fit: cover;
-        max-height: 180px; /* Tambahkan max-height agar thumbnail tidak terlalu panjang */
+        max-height: 180px;
       }
 
       .video-results p {
         margin-top: 10px;
-        overflow: hidden; /* Tambahkan overflow: hidden agar konten yang terlalu panjang dipotong */
+        overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
       }
@@ -193,6 +213,7 @@
           flex: 1 0 100%;
         }
       }
+
       #results li p a {
         display: inline-block;
         padding: 8px 12px;
@@ -208,6 +229,7 @@
       #results li p a:hover {
         background-color: #4759fc;
       }
+
       #newsSlot {
         margin-top: 30px;
       }
@@ -287,10 +309,10 @@
 
             const listItem = document.createElement("li");
             listItem.innerHTML = `
-                <h3>${title}</h3>
-                ${iframe.outerHTML}
-                <p>${downloadButton.outerHTML}</p>
-            `;
+                        <h3>${title}</h3>
+                        ${iframe.outerHTML}
+                        <p>${downloadButton.outerHTML}</p>
+                    `;
 
             resultsContainer.appendChild(listItem);
           });
