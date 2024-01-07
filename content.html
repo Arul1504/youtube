@@ -11,34 +11,36 @@
     <title>Content</title>
     <style>
       body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      #content {
+        overflow: auto;
+      }
+
+      h2 {
+        color: #fafcfa;
+      }
+
+      p {
+        font-size: 18px;
+        color: #fafcfa;
+        line-height: 1.6;
+        opacity: 0; /* Initial opacity set to 0 for the animation */
+        animation: fadeIn 1.5s ease-out forwards; /* Animation definition */
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px); /* Optional: slide up while fading in */
         }
-        h2 {
-    color: #fafcfa;
-}
-
-p {
-    font-size: 18px;
-    color: #fafcfa;
-    line-height: 1.6;
-    opacity: 0; /* Initial opacity set to 0 for the animation */
-    animation: fadeIn 1.5s ease-out forwards; /* Animation definition */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px); /* Optional: slide up while fading in */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
       #header {
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
@@ -48,11 +50,11 @@ p {
         padding: 10px 20px;
       }
 
-      .logo{
-    width: 160px;
-    margin-top: -10px;
-    cursor: pointer;
-}
+      .logo {
+        width: 160px;
+        margin-top: -10px;
+        cursor: pointer;
+      }
 
       #search {
         display: flex;
@@ -119,29 +121,29 @@ p {
         object-fit: cover;
       }
       .jam-digital-malasngoding {
-    overflow: hidden;
-    width: 330px;
-    margin: 20px auto;
-    border: 5px solid #efefef;
-    display: flex;
-    justify-content: space-between;
-}
+        overflow: hidden;
+        width: 330px;
+        margin: 20px auto;
+        border: 5px solid #efefef;
+        display: flex;
+        justify-content: space-between;
+      }
 
-.kotak {
-    width: 30px;
-    height: 30px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+      .kotak {
+        width: 30px;
+        height: 30px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.jam-digital-malasngoding p {
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 10px;
-}
+      .jam-digital-malasngoding p {
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10px;
+      }
 
       .video-results li {
         flex: 1 0 45%;
@@ -211,7 +213,7 @@ p {
   </head>
   <body>
     <div id="header">
-      <img class="logo" src="image/logo.png">
+      <img class="logo" src="image/logo.png" />
       <div id="search">
         <input
           type="text"
@@ -237,13 +239,14 @@ p {
     <div id="container">
       <div id="content">
         <h2>Home</h2>
-        <p>Selamat Datang, di MeTube disini kita bisa menonton video YouTube.</p>
+        <p>
+          Selamat Datang, di MeTube disini kita bisa menonton video YouTube.
+        </p>
         <p>Tanpa terkendala adanya iklan</p>
         <div id="results" class="video-results"></div>
       </div>
     </div>
     <script>
-
       function displayResults(results) {
         const resultsContainer = document.getElementById("results");
         resultsContainer.innerHTML = "";
